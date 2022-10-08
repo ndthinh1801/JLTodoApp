@@ -1,0 +1,15 @@
+package com.example.jltodoapp.domain.get_buy_items
+
+import com.example.jltodoapp.data.Result
+import com.example.jltodoapp.data.model.ListingItem
+import com.example.jltodoapp.data.repository.ListingRepository
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+
+class GetBuysUseCase @Inject constructor(
+    private val repository: ListingRepository
+) {
+    operator fun invoke(): Flow<Result<List<ListingItem>>> {
+        return repository.getBuys()
+    }
+}
